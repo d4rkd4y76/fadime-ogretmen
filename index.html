@@ -7025,7 +7025,7 @@ body > #nova-summary{display:none !important;}
 <th>Foto</th>
 <th>İsim</th>
 <th>Sınıf</th>
-<th>MaçSayısı</th>
+<th>D.Kredisi</th>
 <th>KupaSayısı</th>
 </tr>
 </thead>
@@ -12661,7 +12661,7 @@ async function initSurpriseBox(){
         // RNG — dağılım: %5→500, %10→100, %30→50, %50→30, aksi 10 (garanti alt ödül)
         const r = Math.random() * 100;
         let reward = 10;
-        if(r < 5){ reward = 500; }
+        if(r < 5){ reward = 200; }
         else if(r < 15){ reward = 100; }
         else if(r < 45){ reward = 50; }
         else if(r < 95){ reward = 30; }
@@ -17159,7 +17159,7 @@ async function awardHomeworkDiamonds(hwId, correct, total, sObj){
   try{
     const p = Math.round((Number(correct||0)/Math.max(1, Number(total||0))) * 100);
     let amount = 0;
-    if (p === 100) amount = 500;
+    if (p >= 95) amount = 500;
     else if (p >= 80) amount = 250;
     else if (p >= 50) amount = 100;
     else if (p >= 40) amount = 20;
